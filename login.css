@@ -1,0 +1,465 @@
+/* LOGIN.CSS
+   Estilo moderno e alinhado para a página de login do AutoLoc.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: 'Poppins', sans-serif;
+  --bg: #040404;
+  --panel: rgba(12, 12, 12, 0.96);
+  --panel-soft: rgba(22, 22, 22, 0.88);
+  --border: rgba(212, 175, 55, 0.20);
+  --gold: #D4AF37;
+  --gold-dark: #8B6914;
+  --text: #f2f2f2;
+  --text-muted: #bdbdbd;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+html,
+body {  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 24%),
+              radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.14), transparent 24%),
+              linear-gradient(135deg, #080808 0%, #000000 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blur {
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blur1 {
+  top: -90px;
+  left: -90px;
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.blur2 {
+  bottom: -90px;
+  right: -90px;
+  background: rgba(212, 175, 55, 0.22);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.main-container {
+  position: relative;
+  width: min(100%, 1120px);
+  margin: 36px auto 52px;
+  display: grid;
+  grid-template-columns: 440px minmax(360px, 1fr);
+  overflow: hidden;
+  border-radius: 28px;
+  border: 2px solid var(--border);
+  background: rgba(8, 8, 8, 0.93);
+  box-shadow: var(--shadow);
+}
+
+.right-side,
+.left-side {
+  min-height: 640px;
+}
+
+.right-side {
+  background: var(--panel);
+  border-right: 1px solid rgba(212, 175, 55, 0.12);
+  padding: 44px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side {
+  background: linear-gradient(180deg, #080808 0%, #0f0f0f 100%);
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 34px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 360px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.tabs button {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 14px;
+  color: var(--text);
+  background: transparent;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+}
+
+.tabs button:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.tabs .active {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.15);
+}
+
+.login-box h1 {
+  font-size: clamp(2.6rem, 1.6vw, 3.4rem);
+  margin-bottom: 10px;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 34px;
+  line-height: 1.7;
+}
+
+.login-box form {
+  display: grid;
+  gap: 20px;
+}
+
+.input-group {
+  display: grid;
+  gap: 10px;
+}
+
+.input-group label {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 17px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  background: #111;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+}
+
+.mostrar-senha {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.options a {
+  color: var(--gold);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #111;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.divider {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 30px 0 22px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+}
+
+.social-btn img {
+  width: 22px;
+}
+
+.terms {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+
+.terms span {
+  color: var(--gold);
+}
+
+.left-side .logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 220px;
+  max-width: 100%;
+}
+
+.top-text {
+  color: var(--text);
+  font-size: clamp(2.2rem, 2.1vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.10);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.feature .icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.feature h3 {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+}
+
+.feature p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 20px;
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.7rem;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.card span {
+  color: var(--text-muted);
+}
+
+@media (max-width: 980px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    margin: 24px auto 36px;
+  }
+
+  .right-side,
+  .left-side {
+    min-height: auto;
+  }
+
+  .right-side {
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  }
+
+  .left-side {
+    padding: 34px 28px;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-container {
+    border-radius: 0;
+  }
+
+  .right-side {
+    padding: 30px 22px;
+  }
+
+  .login-box {
+    max-width: 100%;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .left-side {
+    padding: 30px 22px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .feature .icon {
+    margin-bottom: 10px;
+  }
+
+  .feature div {
+    width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+
+  :root {
+    color-scheme: light;
+
+    --bg: #f8f9fb;
+    --panel: rgba(255, 255, 255, 0.96);
+    --panel-soft: rgba(245, 246, 248, 0.95);
+
+    --gold: #D4AF37;
+    --gold-dark: #B8860B;
+
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --border: ##D4AF37;
+
+    --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  }
+
+  body {
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 24%),
+              radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.14), transparent 24%),
+              linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  }
+
+  .left-side{
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  }
+
+  .input-group input{
+    background: #fff;
+    color: var(--text);
+  } 
+  
+  .main-container{
+  border: 2px solid var(--gold);
+  }
+}
