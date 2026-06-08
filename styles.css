@@ -3262,7 +3262,7 @@ body[data-page="login"] {
 
     .service-menu {
         width: 100%;
-    }
+    }	
 
     .service-map-panel {
         width: 100%;
@@ -3280,24 +3280,7 @@ body[data-page="login"] {
         display: none !important;
     }
 
-    .bottom-nav {
-        display: grid !important;
-        position: fixed;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: min(620px, 98vw);
-        height: 64px;
-        padding: 6px;
-        border-radius: 18px 18px 0 0;
-        box-shadow: 0 -2px 18px rgba(0, 0, 0, .18);
-        background: rgba(15, 20, 34, .98);
-        z-index: 1000;
-        border: 1px solid var(--border);
-        gap: 0;
-        grid-template-columns: repeat(5, 1fr);
-        align-items: center;
-    }
+   
 
     .bottom-nav .nav-item {
         display: flex;
@@ -4318,6 +4301,7 @@ body[data-page="login"] {
     .brand-mark {
         overflow-wrap: break-word !important;
     }
+    
 }
 
 @media (prefers-color-scheme: dark) {
@@ -4453,6 +4437,23 @@ body[data-page="service-map"] {
 	
 	body[data-page="service-map"] .modal-card h2, h3 {
 	color:#f8f8f8;
+	}
+	
+	.user-menu{
+	background: var(--blackblue);
+	}
+	
+	.profile-card-large{
+	background: var(--blackblue);
+	}
+	
+	.desktop-nav a.active {
+    background: rgba(215, 184, 79, .14);
+    color: #fff;
+	}
+
+	.bottom-nav{
+	background: #000;
 	}
 	
 }
